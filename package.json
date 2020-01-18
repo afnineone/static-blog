@@ -1,0 +1,36 @@
+{
+  "name": "static-blog",
+  "version": "1.0.0",
+  "description": "My phenomenal Nuxt.js project",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "@nuxtjs/axios": "^5.3.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "autoprefixer": "^9.7.4",
+    "babel-eslint": "^10.0.1",
+    "collect.js": "^4.19.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "glob-all": "^3.1.0",
+    "highlight.js": "^9.17.1",
+    "marked": "^0.8.0",
+    "prettier": "^1.16.4",
+    "purgecss-webpack-plugin": "^1.6.0",
+    "tailwindcss": "^1.1.4"
+  }
+}
