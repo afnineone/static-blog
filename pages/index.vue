@@ -27,7 +27,7 @@
 <script>
 export default {
   async asyncData ({ app }) {
-    const { data } = await app.$axios.post(process.env.POSTS_URL,
+    const { data } = await app.$axios.post(process.env.postsURL,
     JSON.stringify({
         filter: { published: true },
         sort: {_created:-1},

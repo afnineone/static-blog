@@ -70,7 +70,7 @@ export default {
 */ 
 generate: {
   routes: async () => {
-    let { data } = await axios.post(process.env.POSTS_URL,
+    let { data } = await axios.post(process.env.postsURL,
     JSON.stringify({
         filter: { published: true },
         sort: {_created:-1},
@@ -112,7 +112,7 @@ sitemap: {
   cacheTime: 1000 * 60 * 15,
   generate: true, // Enable me when using nuxt generate
   async routes () {
-    let { data } = await axios.post(process.env.POSTS_URL,
+    let { data } = await axios.post(process.env.postsURL,
     JSON.stringify({
         filter: { published: true },
         sort: {_created:-1},

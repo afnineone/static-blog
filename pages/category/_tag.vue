@@ -31,7 +31,7 @@ export default {
     if (payload) {
       return { posts: payload, category: params.tag }
     } else {
-      let { data } = await app.$axios.post(process.env.POSTS_URL,
+      let { data } = await app.$axios.post(process.env.postsURL,
       JSON.stringify({
           filter: { published: true, tags: { $has:params.tag } },
           sort: {_created:-1},
