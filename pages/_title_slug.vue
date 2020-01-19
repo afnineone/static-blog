@@ -35,6 +35,15 @@ export default {
 
       return { post: data.entries[0] }
     }
+  },
+
+  head () {
+  return {
+    title: this.post.title,
+    meta: [
+      { hid: 'description', name: 'description', content: this.post.excerpt },
+    ]
   }
+}
 }
 </script>

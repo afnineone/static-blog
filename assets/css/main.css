@@ -19,3 +19,7 @@
   pre {
     @apply my-8;
   }
+
+  .post-date{
+   @apply text-gray-800;
+  }

@@ -4,7 +4,7 @@
       <ul class="flex flex-col w-full p-0">
         <li class="mb-6 w-full" v-for="(post, key) in posts" :key="key">
           <div class="text-gray-600 font-bold text-sm tracking-wide">
-            <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="ml-1">{{ tag }}</a>
+            {{ post._created | toDate }} | <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="post-date ml-1">{{ tag }}</a>
           </div>
 
           <a :href="'/'+post.title_slug">

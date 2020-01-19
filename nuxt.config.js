@@ -57,7 +57,8 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/sitemap'
   ],
   /*
    ** Axios module configuration
@@ -101,6 +102,35 @@ generate: {
         payload: post
       }
     }).all()
+
+    return posts.concat(tags)
+  }
+},
+sitemap: {
+  path: '/sitemap.xml',
+  hostname: process.env.URL,
+  cacheTime: 1000 * 60 * 15,
+  generate: true, // Enable me when using nuxt generate
+  async routes () {
+    let { data } = await axios.post(process.env.POSTS_URL,
+    JSON.stringify({
+        filter: { published: true },
+        sort: {_created:-1},
+        populate: 1
+      }),
+    {
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+    const collection = collect(data.entries)
+
+    let tags = collection.map(post => post.tags)
+    .flatten()
+    .unique()
+    .map(tag => `category/${tag}`)
+    .all()
+
+    let posts = collection.map(post => post.title_slug).all()
 
     return posts.concat(tags)
   }

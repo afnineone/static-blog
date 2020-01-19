@@ -47,6 +47,14 @@ export default {
 
       return { posts: data.entries, category: params.tag }
     }
+  },
+  head () {
+  return {
+    title: `Posts tagged with ${this.category}`,
+    meta: [
+      { hid: 'description', name: 'description', content: `All blog posts categorised as ${this.category}.` },
+    ]
   }
+}
 }
 </script>
