@@ -1,9 +1,7 @@
-const fs = require("fs");
-fs.writeFileSync(
-  "./.env",
-  `
+const fs = require('fs')
+fs.writeFileSync('./.env', `
 baseURL=${process.env.baseURL}\n
-postsURL=${process.env.postsURL}\n
-URL=${process.env.URL}
-`
-);
+postURL=${process.env.POSTS_URL}\n
+URL=${process.env.URL}\n
+FORMS_TOKEN=${process.env.FORMS_TOKEN}
+`)

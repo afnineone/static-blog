@@ -19,6 +19,13 @@ export default {
     PageHeader,
     PageNav,
     PageFooter
+  },
+    head () {
+    return {
+      meta: [
+        { hid: 'robots', name: 'robots', content: 'noindex' }
+      ]
+    }
   }
 }
 </script>
